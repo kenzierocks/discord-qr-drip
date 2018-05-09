@@ -37,17 +37,15 @@ export function drip(token: string, message: string, interval: number, instant: 
     client.on('ready', () => {
         console.log('I am ready!');
 
-        if (instant) {
+        function intervalPromise() {
             dripPart().then(() => {
-                throw die("Instantly completed.", null, 0);
+                if (instant) {
+                    throw die("Instantly completed.", null, 0);
+                }
+                setTimeout(intervalPromise, interval * MILLIS_PER_MINUTE);
             });
         }
 
-        function intervalPromise() {
-            setTimeout(() => {
-                dripPart().then(intervalPromise)
-            }, interval * MILLIS_PER_MINUTE);
-        }
         intervalPromise();
     });
 
