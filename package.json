@@ -1,0 +1,24 @@
+{
+  "name": "discord-qr-drip",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/qr-image": "^3.2.1",
+    "@types/yargs": "^11.0.0",
+    "discord.js": "^11.3.2",
+    "erlpack": "github:hammerandchisel/erlpack",
+    "qr-image": "^3.2.0",
+    "typescript": "^2.8.3",
+    "uws": "^9.148.0",
+    "yargs": "^11.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^9.6.5"
+  }
+}
